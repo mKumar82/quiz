@@ -42,10 +42,10 @@ public class QuizController {
 		try {
 	        
 			List<Quiz> quiz = this.quizService.getActiveQuiz();
-	        return ResponseEntity.ok(quiz==null?"no active quiz":quiz);
+	        return ResponseEntity.ok(quiz);
 	        
 	    } catch (Exception ex) {
-	    	System.out.println(ex);
+	    	//System.out.println(ex);
 	    	String errorMessage = "Failed to retrieve active quiz";
 	        return errorHandler.handleException(ex,errorMessage);
 	    }
